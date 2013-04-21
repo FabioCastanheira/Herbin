@@ -31,13 +31,15 @@ public class MouseEvents implements MouseListener, MouseMotionListener {
                             System.out.println("VOUS AVEZ TOUCHE UNE FORME BRAVO");
                             //Le shape "touché"
 			    this.shape = this.listeFormes.get(i);
+                            //on remet la forme au 1er plan
+                            this.jc.removeShapeFromDraw(this.shape);
+                            this.jc.addShapeToDraw(this.shape);
                             System.out.println("Shape : " + this.shape);
 			    this.deplacer(e, this.shape);  
 			    touche = true;
 			    break;
 			}
 		}
-		
 	}
         
 	@Override
