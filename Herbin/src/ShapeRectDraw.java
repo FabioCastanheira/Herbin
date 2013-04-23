@@ -1,7 +1,7 @@
 
 import java.awt.*;
 import java.awt.geom.*;
-public abstract class ShapeRectDraw implements JShapeDraw {
+public abstract class ShapeRectDraw implements JShapeDraw, java.io.Serializable {
 	
 	
 	protected Rectangle rect ;

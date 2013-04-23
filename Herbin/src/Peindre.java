@@ -5,6 +5,9 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
 /*
  * To change this template, choose Tools | Templates and open the template in
  * the editor.
@@ -19,6 +22,7 @@ public class Peindre {
     private String stringToTranslate;
     private GenerationFormes randomGenerate;
     private ArrayList<JShapeDraw> histoFormes;
+    private HFrame hFrame;
 
     public Peindre(JCanvas j, String s) {
         this.jc = j;
@@ -46,7 +50,7 @@ public class Peindre {
         MotDecompose mot = null;
         this.histoFormes = new ArrayList<JShapeDraw>();
 
-        Boite b = new Boite(this.jc.getPreferredSize(), new Point(5, 5));
+        Boite b = new Boite(this.jc.getPreferredSize(), new Point(0, 0));
 
         //autant de boîtes que de lettres
         b.mosaique(stringToTranslate.length() - 1, b.getListBoites(), 100, 100);
@@ -261,15 +265,17 @@ public class Peindre {
                 this.histoFormes.add(formeAPlacer);
             }
         }
-        GUIPaint.add(this.jc);
+        this.hFrame.addDraw(this.jc);
+        //return this.jc;
     }
 
-    public void go() {
-        GUIPaint.paintOnFrame(this.jc, "EL HERBINATOR");
+    public void go(Dimension d) {
+        //GUIPaint.paintOnFrame(this.jc, "EL HERBINATOR");
+    	this.hFrame = new HFrame(d, this.jc);
     }
     
     public void destroyFrame(){
-        GUIPaint.destroy();
+    	this.hFrame.destroy();
     }
 
     public Color generateColor(boolean nuance, int[] cst_nuance, int[] cst) {

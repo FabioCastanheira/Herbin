@@ -5,7 +5,7 @@ import java.util.Iterator;
 //import java.util.LinkedList;
 //import java.util.List;
 	
-public class JCanvas extends JPanel {
+public class JCanvas extends JPanel implements java.io.Serializable {
     /**
      *
      */

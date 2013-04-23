@@ -19,7 +19,7 @@ public class Herbin {
         this.jc = new JCanvas();
     }
 
-    public void herbinGenerator(String s, int w, int h, boolean reload, boolean mouse, boolean threadUsing) {
+    /*public void herbinGenerator(String s, int w, int h, boolean reload, boolean mouse, boolean threadUsing) {
         this.mot = s;
         this.sizeHerbin = new Dimension(w, h);
         this.jc.setPreferredSize(this.sizeHerbin);
@@ -39,15 +39,16 @@ public class Herbin {
         if (threadUsing) {
             this.confThread();
         }
-    }
+    }*/
 
     public void herbinGenerator(boolean mouse, boolean threadUsing) {
-        Saisie saisie = new Saisie(this);
+        //Saisie saisie = new Saisie(this);
 
         this.firstLaunch = true;
 
         this.mouse = mouse;
         this.threadUsing = threadUsing;
+        this.launch("evywabafyanitor", new Dimension(1900,1000));
     }
 
     public void confButtonReload() {
@@ -78,8 +79,9 @@ public class Herbin {
             this.firstLaunch = false;
             this.jc.clear();
             this.jc.setPreferredSize(dim);
+            
             this.tableau = new Peindre(this.jc, mot);
-            this.tableau.go();
+            this.tableau.go(dim);
             this.tableau.reload();
             if(this.mouse)
                 this.confMouse();

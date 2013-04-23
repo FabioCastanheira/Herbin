@@ -1,4 +1,4 @@
-
+/*
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
@@ -18,6 +18,7 @@ public class GUIPaint {
                 System.exit(0);
             }
         };
+        
         frame.addWindowListener(wa);
         frame.getContentPane().add(component);
         frame.pack();
@@ -36,3 +37,4 @@ public class GUIPaint {
         frame.dispose();
     }
 }
+*/

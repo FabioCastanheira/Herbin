@@ -26,15 +26,15 @@ public class MouseEvents implements MouseListener, MouseMotionListener {
                             //On récupère les différences du x et du y pour calculer la position finale de la forme
                             preX = this.listeFormes.get(i).getShape().getBounds().x - e.getX();
 			    preY = this.listeFormes.get(i).getShape().getBounds().y - e.getY();
-			    System.out.println("X du Shape : " + this.listeFormes.get(i).getShape().getBounds().x );
-			    System.out.println("X de la souris : " + e.getX());
-                            System.out.println("VOUS AVEZ TOUCHE UNE FORME BRAVO");
+			   // System.out.println("X du Shape : " + this.listeFormes.get(i).getShape().getBounds().x );
+			    //System.out.println("X de la souris : " + e.getX());
+                            //System.out.println("VOUS AVEZ TOUCHE UNE FORME BRAVO");
                             //Le shape "touché"
 			    this.shape = this.listeFormes.get(i);
                             //on remet la forme au 1er plan
                             this.jc.removeShapeFromDraw(this.shape);
                             this.jc.addShapeToDraw(this.shape);
-                            System.out.println("Shape : " + this.shape);
+                            //System.out.println("Shape : " + this.shape);
 			    this.deplacer(e, this.shape);  
 			    touche = true;
 			    break;
@@ -45,7 +45,7 @@ public class MouseEvents implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		if (touche) {
-			System.out.println("DRAAAAAAAAAAAAAAAAAAAAAAAG");
+			//System.out.println("DRAAAAAAAAAAAAAAAAAAAAAAAG");
 			this.deplacer(e, shape);
 		}
 		
@@ -57,7 +57,7 @@ public class MouseEvents implements MouseListener, MouseMotionListener {
 			this.deplacer(e, this.shape);
 			this.shape = null;
 			touche = false;
-			System.out.println("VOUS AVEZ RELACHE LA FORME");
+			//System.out.println("VOUS AVEZ RELACHE LA FORME");
 		}
 		
 	}
@@ -92,10 +92,10 @@ public class MouseEvents implements MouseListener, MouseMotionListener {
 
 		//shape.getRectangle().setLocation(preX + e.getX(), preY + e.getY());
                 shape.translate(e.getX() - shape.getRectangle().x + preX, e.getY() - shape.getRectangle().y + preY );
-                System.out.println("preX : " + preX + "\npreY : " + preY);
+                /*System.out.println("preX : " + preX + "\npreY : " + preY);
 		System.out.println("**************\nX : "+ (e.getX()) +"\nY: "+ (e.getY()));
 		System.out.println("X Shape : "+ shape.getRectangle().x + "\nY Shape: " + shape.getRectangle().y);
-		System.out.println("Location Rect : "+shape.getRectangle().getLocation());
+		System.out.println("Location Rect : "+shape.getRectangle().getLocation());*/
 		this.jc.repaint();
 	}
 

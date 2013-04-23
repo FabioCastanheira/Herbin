@@ -1,6 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Area;
-public abstract class ShapePolygonDraw implements JShapeDraw {
+public abstract class ShapePolygonDraw implements JShapeDraw, java.io.Serializable {
 	
 	
 	protected Polygon polygon ;

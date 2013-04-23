@@ -1,4 +1,4 @@
-import HandCapture.HandsCapture;
+//import HandCapture.HandsCapture;
 
 /*
  * To change this template, choose Tools | Templates

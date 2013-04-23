@@ -7,7 +7,7 @@ import java.awt.geom.Area;
 import java.awt.geom.PathIterator;
 
 
-public abstract class ShapeAreaDraw implements JShapeDraw {
+public abstract class ShapeAreaDraw implements JShapeDraw, java.io.Serializable {
 	protected Area area ;
 	protected Color color;
 	public ShapeAreaDraw(Area area, Color color){

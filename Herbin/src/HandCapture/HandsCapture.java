@@ -19,7 +19,7 @@ package HandCapture;
 	 *  C:\Program Files (x86)\Prime Sense\NITE\Hands\Data\Nite.ini
 	 * ----------------------------------------------------------------------------
 	 */
-
+/*
 import SimpleOpenNI.*;
 
 import java.awt.Color;
@@ -258,3 +258,4 @@ public class HandsCapture extends PApplet{
 
 	}
 }
+*/
