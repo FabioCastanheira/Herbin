@@ -19,7 +19,7 @@ package HandCapture;
 	 *  C:\Program Files (x86)\Prime Sense\NITE\Hands\Data\Nite.ini
 	 * ----------------------------------------------------------------------------
 	 */
-/*
+
 import SimpleOpenNI.*;
 
 import java.awt.Color;
@@ -36,15 +36,15 @@ public class HandsCapture extends PApplet{
 	XnVFlowRouter     flowRouter;
 
 	PointDrawer       pointDrawer;
-	Hand hand;
+	//Hand hand;
 	
 	public static void main(String args[]){
 		PApplet.main(new String[] { HandsCapture.class.getName() });
 	}
 
-	public void setHand(Hand h){
+	/*public void setHand(Hand h){
 		this.hand=h;
-	}
+	}*/
 	
 	public void setup()
 	{
@@ -144,13 +144,13 @@ public class HandsCapture extends PApplet{
 	  HashMap    _pointLists;
 	  int        _maxPoints;
 	  Color[]    _colorList = { new Color(255,0,0),new Color(0,255,0),new Color(0,0,255),new Color(255,255,0)};
-	  Hand hand;
+	  //Hand hand;
 	  
 	  public PointDrawer(Hand h)
 	  {
 	    _maxPoints = 30;
 	    _pointLists = new HashMap();
-	    this.hand =h;
+	    //this.hand =h;
 	  }
 		
 	  public void OnPointCreate(XnVHandPointContext cxt)
@@ -159,6 +159,10 @@ public class HandsCapture extends PApplet{
 	    addPoint(cxt.getNID(),new PVector(cxt.getPtPosition().getX(),cxt.getPtPosition().getY(),cxt.getPtPosition().getZ()));
 	    //Hand hand = new Hand();
 	    //System.out.println("X="+cxt.getPtPosition().getX()+" Y="+cxt.getPtPosition().getY());
+	    Hand.xHand=cxt.getPtPosition.getX();
+	    Hand.yHand=cxt.getPtPosition.getY();
+	    Hand.zHand=cxt.getPtPosition.getZ();
+	    Hand.detectedHand=true;
 	    println("OnPointCreate, handId: " + cxt.getNID());
 	  }
 	  
@@ -166,12 +170,16 @@ public class HandsCapture extends PApplet{
 	  {
 		  PVector tmpVec = new PVector(cxt.getPtPosition().getX(),cxt.getPtPosition().getY(),cxt.getPtPosition().getZ());
 	    //println("OnPointUpdate X=" + tmpVec.x + " Y = "+tmpVec.y);   
-		  this.hand.setXY(tmpVec.x, tmpVec.y);
+		  //this.hand.setXY(tmpVec.x, tmpVec.y);
+		  Hand.xHand=cxt.getPtPosition.getX();
+		  Hand.yHand=cxt.getPtPosition.getY();
+		  Hand.zHand=cxt.getPtPosition.getZ();
 	    addPoint(cxt.getNID(),tmpVec);
 	  }
 	  
 	  public void OnPointDestroy(long nID)
 	  {
+		  Hand.detectedHand=false;
 	    println("OnPointDestroy, handId: " + nID);
 	    
 	    // remove list
@@ -201,9 +209,9 @@ public class HandsCapture extends PApplet{
 	      curList.remove(curList.size() - 1);
 	  }
 	  
-	  public Hand getHand(){
+	  /*public Hand getHand(){
 		  return this.hand;
-	  }
+	  }*/
 	  
 	  public void draw()
 	  {
@@ -258,4 +266,3 @@ public class HandsCapture extends PApplet{
 
 	}
 }
-*/

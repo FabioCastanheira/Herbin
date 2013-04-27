@@ -23,6 +23,7 @@ public class Peindre {
     private GenerationFormes randomGenerate;
     private ArrayList<JShapeDraw> histoFormes;
     private HFrame hFrame;
+    private TreeSet<Boite> lb;
 
     public Peindre(JCanvas j, String s) {
         this.jc = j;
@@ -55,7 +56,7 @@ public class Peindre {
         //autant de boîtes que de lettres
         b.mosaique(stringToTranslate.length() - 1, b.getListBoites(), 100, 100);
         listeBoites = b.getListBoites();
-
+        this.lb=listeBoites;
         this.randomGenerate = new GenerationFormes();
 
         //on décompose le mot en formes et couleurs
@@ -391,4 +392,54 @@ public class Peindre {
     public String getMot(){
         return this.stringToTranslate;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

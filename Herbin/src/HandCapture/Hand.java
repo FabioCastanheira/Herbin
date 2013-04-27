@@ -2,19 +2,24 @@ package HandCapture;
 
 public class Hand {
 	
-	private int x;
-	private int y;
-	private boolean detected;
+	public static float xHand;
+	public static float yHand;
+	public static float zHand;
+	public static boolean detectedHand;
 	
-	public Hand(){
-		this.detected=false;
+	public static String desc(){
+		return "X = "+xHand+" Y = "+yHand+" Z = "+zHand;
 	}
+	
+	/*public Hand(){
+		this.detected=false;
+	}*/
 	
 	/*public Hand(int x, int y){
 		this.setX(x);
 		this.setY(y);
 	}*/
-	
+	/*
 	public void setXY(float x, float y){
 		this.x=(int)x;
 		this.y=(int)y;
@@ -46,6 +51,6 @@ public class Hand {
 
 	public void afficheCooHand(){
 		System.out.println("Xh = "+this.x + "Yh = "+this.y);
-	}
+	}*/
 	
 }
