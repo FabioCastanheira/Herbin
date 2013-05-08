@@ -42,13 +42,13 @@ public class Herbin {
     }*/
 
     public void herbinGenerator(boolean mouse, boolean threadUsing) {
-        //Saisie saisie = new Saisie(this);
+        Saisie saisie = new Saisie(this);
 
         this.firstLaunch = true;
 
         this.mouse = mouse;
         this.threadUsing = threadUsing;
-        this.launch("evywabafyanitor", new Dimension(1900,1000));
+        //this.launch("evywabafyanitor", new Dimension(1900,1000));
     }
 
     public void confButtonReload() {

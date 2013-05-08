@@ -17,8 +17,8 @@ public class StartRandomWithClass {
             Herbin herbinator_3000 = new Herbin();
             herbinator_3000.herbinGenerator(true, false);//souris, avec thread
             //HandsCapture.main(args);
-            while(Hand.detectedHand){
+           /* while(Hand.detectedHand){
             	System.out.println(Hand.desc());
-            }
+            }*/
     }
 }
